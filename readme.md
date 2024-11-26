@@ -5,5 +5,5 @@ Build a shop cart based on the shopee's cart, where the cart hold itens to be bo
 //dominio da aplicação: carrinho de compras
 
 //as entidades representadas
-//->Carrinho
-//->itens
+//->Carrinho = carrinho
+//->itens = item.js
