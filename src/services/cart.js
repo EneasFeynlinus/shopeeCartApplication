@@ -5,7 +5,18 @@ async function addItem(userCart, item) {
 }
 // deletar item do carrinho
 async function deleteItem(userCart, name) {
+    const index = userCart.findIndex((item) => item.name === name)
 
+    if(index !== -1){
+        userCart.splice(index, 1)
+    }
+}
+
+async function displayCart(userCart) {
+    console.log("Shopee cart list:")
+    userCart.forEach((item, index) =>{
+        console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity} | Subtotal = ${item.subtotal()}`);
+    })
 }
 // remover um item
 async function removeItem (userCart, index) {
@@ -21,5 +32,6 @@ export {
     addItem,
     deleteItem,
     removeItem,
-    calculateTotal
+    calculateTotal,
+    displayCart
 }
